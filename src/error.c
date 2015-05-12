@@ -6,11 +6,11 @@
 /* Error message buffer length */
 #define LSL_ERR_LEN 256
 
-void lsl_error(const char * progname, const char * msg, const int fatal){
+void lsl_error(const char * msg, const int fatal){
 
    char message[LSL_ERR_LEN] = {0};
 
-   snprintf(message, LSL_ERR_LEN, "%s: %s", progname, msg );   
+   snprintf(message, LSL_ERR_LEN, "%s: %s", msg );   
    perror(message);
    
    if(fatal){
